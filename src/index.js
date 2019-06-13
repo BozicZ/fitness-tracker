@@ -6,7 +6,7 @@ import logger from "redux-logger";
 
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import "./index.css";
+import "./styles/index.css";
 import myRootReducer from "./reducers";
 import App from "./containers/App";
 import * as serviceWorker from "./serviceWorker";

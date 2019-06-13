@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addSampleAsync } from "../actions";
-import "../App.css";
+import "../styles/app.css";
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class App extends Component {
 
   render() {
     const { children } = this.props;
-    return <div>{children}</div>;
+    return <div className="app-content">{children}</div>;
   }
 }
 const mapStateToProps = ({ sample }) => {
