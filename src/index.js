@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import logger from "redux-logger";
 
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
@@ -13,7 +14,7 @@ import * as serviceWorker from "./serviceWorker";
 import Home from "./components/Home";
 import Details from "./components/Details";
 
-const store = createStore(myRootReducer, applyMiddleware(thunk));
+const store = createStore(myRootReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   <Provider store={store}>
