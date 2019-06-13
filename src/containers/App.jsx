@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import axios from "axios";
 import { addSampleAsync } from "../actions";
 import "../styles/app.css";
 
@@ -12,6 +13,11 @@ class App extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(addSampleAsync("Some sync data..."));
+
+    axios.get(`https://api.myjson.com/bins/1gwnal`).then(res => {
+      const info = res.data;
+      console.log("Info from API ", info);
+    });
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
