@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import axios from "axios";
-import { addSampleAsync } from "../actions";
+import { addSteps } from "../actions";
 import "../styles/app.css";
 
 class App extends Component {
@@ -12,12 +11,7 @@ class App extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(addSampleAsync("Some sync data..."));
-
-    axios.get(`https://api.myjson.com/bins/1gwnal`).then(res => {
-      const info = res.data;
-      console.log("Info from API ", info);
-    });
+    dispatch(addSteps());
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -30,6 +24,7 @@ class App extends Component {
     return <div className="app-content">{children}</div>;
   }
 }
+
 const mapStateToProps = ({ sample }) => {
   return { sample };
 };
