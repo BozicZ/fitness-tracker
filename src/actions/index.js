@@ -1,18 +1,21 @@
-const addSampleStarted = () => ({
-    type: 'ADD_SAMPLE_ASYNC_STARTED',
-    payload: { loading: true }
-})
+import axios from "axios";
 
-const addSampleComplete = payload => ({
-    type: 'ADD_SAMPLE_ASYNC_COMPLETE',
-    payload
-})
+const addStepsStarted = () => ({
+  type: "ADD_STEPS_STARTED",
+  payload: { loading: true }
+});
 
-export const addSampleAsync = (payload) => {
-    return dispatch => {
-        dispatch(addSampleStarted());
-        setTimeout(() => {
-            dispatch(addSampleComplete(payload + ' + some async data'));
-        }, 3000);
-    };
-}
+const addStepsCompleted = payload => ({
+  type: "ADD_STEPS_COMPLETED",
+  payload
+});
+
+export const addSteps = () => {
+  return dispatch => {
+    dispatch(addStepsStarted());
+    axios.get(`https://api.myjson.com/bins/1gwnal`).then(res => {
+      const info = res.data;
+      dispatch(addStepsCompleted(info));
+    });
+  };
+};
