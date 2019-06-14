@@ -1,17 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Container from "./Container";
 import "../styles/home.css";
 
-const ftDays = [
-  { num: 4, name: "MON" },
-  { num: 5, name: "TUE" },
-  { num: 6, name: "WED" },
-  { num: 7, name: "THU" },
-  { num: 8, name: "FRI" }
-];
+// TODO: Move to helpers all repeating functions
+const calcTime = (currDay, allDays) => {
+  const totalSteps = allDays.find(day => day.dayName === currDay).steps;
+  let totalTime = new Date(null);
+  totalTime.setSeconds(totalSteps * 0.5);
+  totalTime = totalTime
+    .toISOString()
+    .substr(11, 5)
+    .replace(":", " ");
+  return totalTime;
+};
 
-export default function Details() {
+export default function Details(props) {
+  const { currDay, allDays } = props.location.state;
+  const selectedDay = allDays.find(day => day.dayName === currDay);
+  const fullDate = `${selectedDay.month} ${selectedDay.dayName}, ${
+    selectedDay.year
+  }.`;
+  const allSteps = selectedDay.steps;
+  const calories = selectedDay.steps / 20;
+  const timeSpent = calcTime(currDay, allDays);
+  const distance = ((selectedDay.steps * 0.762) / 1000).toFixed(2);
   return (
     <div>
       <ul>
@@ -22,18 +35,21 @@ export default function Details() {
       <Container backgroundColor={"rgba(255, 255, 255, 0.2)"}>
         <div className="ft-info">
           <div>
-            <h1>Tuesday!</h1>
-            <p>June 21, 2019.</p>
+            <h1>{currDay + "!"}</h1>
+            <p>{fullDate}</p>
           </div>
         </div>
       </Container>
       <div className="ft-days">
-        {ftDays.map(day => {
+        {allDays.map((day, index) => {
           return (
-            <Container backgroundColor={"rgba(255, 255, 255, 0.2)"}>
+            <Container
+              key={index + "_details"}
+              backgroundColor={"rgba(255, 255, 255, 0.2)"}
+            >
               <div className="ft-day">
-                <p>{day.num}</p>
-                <p>{day.name}</p>
+                <p>{day.day}</p>
+                <p>{day.dayName}</p>
               </div>
             </Container>
           );
@@ -43,7 +59,7 @@ export default function Details() {
         <div className="ft-details-main">
           <div className="ft-circle">
             <p>Steps</p>
-            <h1>7,542</h1>
+            <h1>{allSteps}</h1>
           </div>
           <div>
             <p>Very good</p>
@@ -54,15 +70,15 @@ export default function Details() {
         <div className="ft-details-bottom">
           <div>
             <p>km</p>
-            <h2>4.2</h2>
+            <h2>{distance}</h2>
           </div>
           <div>
             <p>cal</p>
-            <h2>315</h2>
+            <h2>{calories}</h2>
           </div>
           <div>
             <p>hours</p>
-            <h2>4</h2>
+            <h2>{timeSpent}</h2>
           </div>
         </div>
       </Container>
