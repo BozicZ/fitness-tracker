@@ -130,3 +130,10 @@ p {
   border-radius: 120px;
   margin-top: 35px;
 }
+
+.ft-icon {
+  background: #00b6a3;
+  padding: 10px;
+  border-radius: 30px;
+  opacity: 0.3;
+}

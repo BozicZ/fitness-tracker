@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addSteps, addSelectedDay } from "../actions";
+import RunnerIcon from "../svg/run.svg";
+import TimerIcon from "../svg/timer.svg";
+import CaloriesIcon from "../svg/whatshot.svg";
 
 import Container from "./Container";
 import "../styles/home.css";
@@ -95,6 +98,7 @@ class Home extends Component {
             <div key={index + "_info"} className="mb">
               <Container backgroundColor={"rgba(255, 255, 255, 0.2)"}>
                 <div className="ft-info">
+                  <img className="ft-icon" src={RunnerIcon} />
                   <div>
                     <h2>{info.title}</h2>
                     <p>Total</p>
