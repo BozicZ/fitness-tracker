@@ -3,3 +3,18 @@
   margin-top: 20px;
   margin-bottom: 100vh;
 }
+
+@font-face {
+  font-family: "Helvetica-Neue";
+  src: url("../fonts/HelveticaNeue.ttf");
+}
+
+@font-face {
+  font-family: "Helvetica-Neue-Bold";
+  src: url("../fonts/HelveticaNeuBold.ttf");
+}
+
+@font-face {
+  font-family: "Helvetica-Neue-Medium";
+  src: url("../fonts/HelveticaNeueMedium.ttf");
+}
