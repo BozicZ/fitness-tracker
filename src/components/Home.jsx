@@ -65,10 +65,22 @@ class Home extends Component {
           </div>
         </Container>
         <div className="ft-days">
-          {this.state.days.map(day => {
+          {this.state.days.map((day, index) => {
             return (
-              <Container backgroundColor={"rgba(255, 255, 255, 0.2)"}>
-                <Link to="/details" onClick={() => this.selectDay(day.dayName)}>
+              <Container
+                key={index + "_days"}
+                backgroundColor={"rgba(255, 255, 255, 0.2)"}
+              >
+                <Link
+                  to={{
+                    pathname: "/details",
+                    state: {
+                      currDay: day.dayName,
+                      allDays: this.props.sample.steps
+                    }
+                  }}
+                  onClick={() => this.selectDay(day.dayName)}
+                >
                   <div className="ft-day">
                     <p>{day.day}</p>
                     <p>{day.dayName.toUpperCase()}</p>
@@ -78,9 +90,9 @@ class Home extends Component {
             );
           })}
         </div>
-        {this.state.info.map(info => {
+        {this.state.info.map((info, index) => {
           return (
-            <div className="mb">
+            <div key={index + "_info"} className="mb">
               <Container backgroundColor={"rgba(255, 255, 255, 0.2)"}>
                 <div className="ft-info">
                   <div>
