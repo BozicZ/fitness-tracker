@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Container from "./Container";
+import RunnerIcon from "../svg/run.svg";
+
 import "../styles/home.css";
 
 // TODO: Move to helpers all repeating functions
@@ -58,6 +60,7 @@ export default function Details(props) {
       <Container backgroundColor={"#fff"}>
         <div className="ft-details-main">
           <div className="ft-circle">
+            <img className="ft-icon" src={RunnerIcon} />
             <p>Steps</p>
             <h1>{allSteps}</h1>
           </div>
