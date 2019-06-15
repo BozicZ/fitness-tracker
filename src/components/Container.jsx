@@ -4,12 +4,9 @@ import "../styles/container.css";
 export default function Container(props) {
   return (
     <div
-      className="ft-container"
-      style={{
-        height: props.height,
-        width: props.width,
-        backgroundColor: props.backgroundColor
-      }}
+      className={`ft-container ${props.background} ${props.active} ${
+        props.size
+      } ${props.screen}`}
     >
       {props.children}
     </div>

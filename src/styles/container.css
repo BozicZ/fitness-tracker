@@ -1,4 +1,29 @@
 .ft-container {
   border-radius: 24px;
+}
+
+.ft-container.small {
   padding: 5px;
+}
+
+.ft-container.large {
+  padding: 25px 20px;
+}
+
+.ft-container.active {
+  background: #fff;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.1);
+}
+
+.ft-container.active p {
+  color: rgba(0, 182, 163, 0.7);
+}
+
+.ft-container.small.home:hover {
+  background: #fff;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.1);
+}
+
+.ft-container.small.home:hover p {
+  color: rgba(0, 182, 163, 0.7);
 }

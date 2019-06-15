@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Container from "./Container";
 import RunnerIcon from "../svg/run.svg";
-
-import "../styles/home.css";
+import ArrowLeft from "../svg/left.svg";
 
 // TODO: Move to helpers all repeating functions
 const calcTime = (currDay, allDays) => {
@@ -24,21 +23,19 @@ export default function Details(props) {
     selectedDay.year
   }.`;
   const allSteps = selectedDay.steps;
-  const calories = selectedDay.steps / 20;
+  const calories = (selectedDay.steps / 20).toFixed(1);
   const timeSpent = calcTime(currDay, allDays);
-  const distance = ((selectedDay.steps * 0.762) / 1000).toFixed(2);
+  const distance = ((selectedDay.steps * 0.762) / 1000).toFixed(1);
   return (
     <div>
-      <ul>
-        <li>
-          <Link to="/home">Home</Link>
-        </li>
-      </ul>
-      <Container backgroundColor={"rgba(255, 255, 255, 0.2)"}>
-        <div className="ft-info">
-          <div>
-            <h1>{currDay + "!"}</h1>
-            <p>{fullDate}</p>
+      <Container background="light" size="large" screen="details">
+        <div className="details-header">
+          <Link to="/home">
+            <img src={ArrowLeft} />
+          </Link>
+          <div className="ft-details-header">
+            <p className="bold-34-solid-white title">{currDay + "!"}</p>
+            <p className="medium-16-tr-white">{fullDate}</p>
           </div>
         </div>
       </Container>
@@ -46,42 +43,47 @@ export default function Details(props) {
         {allDays.map((day, index) => {
           return (
             <Container
+              background="light"
+              size={"small"}
+              screen={"details"}
+              active={day.dayName === currDay ? "active" : ""}
               key={index + "_details"}
-              backgroundColor={"rgba(255, 255, 255, 0.2)"}
             >
               <div className="ft-day">
-                <p>{day.day}</p>
-                <p>{day.dayName}</p>
+                <p className="medium-16-tr-white">{day.day}</p>
+                <p className="medium-16-tr-white">
+                  {day.dayName.toUpperCase()}
+                </p>
               </div>
             </Container>
           );
         })}
       </div>
-      <Container backgroundColor={"#fff"}>
+      <Container background="solid" size="large" screen="details">
         <div className="ft-details-main">
           <div className="ft-circle">
-            <img className="ft-icon" src={RunnerIcon} />
-            <p>Steps</p>
-            <h1>{allSteps}</h1>
+            <img className="ft-icon dark details-icon" src={RunnerIcon} />
+            <p className="regular-20-solid-black">Steps</p>
+            <p className="bold-48-solid-black">{allSteps}</p>
           </div>
           <div>
-            <p>Very good</p>
-            <h2>Keep going!</h2>
+            <p className="regular-20-solid-black">Very good</p>
+            <p className="bold-40-solid-black">Keep going!</p>
           </div>
         </div>
 
         <div className="ft-details-bottom">
           <div>
-            <p>km</p>
-            <h2>{distance}</h2>
+            <p className="regular-18-solid-grey">km</p>
+            <p className="bold-40-solid-green">{distance}</p>
           </div>
           <div>
-            <p>cal</p>
-            <h2>{calories}</h2>
+            <p className="regular-18-solid-grey">cal</p>
+            <p className="bold-40-solid-green">{calories}</p>
           </div>
           <div>
-            <p>hours</p>
-            <h2>{timeSpent}</h2>
+            <p className="regular-18-solid-grey">hours</p>
+            <p className="bold-40-solid-green">{timeSpent}</p>
           </div>
         </div>
       </Container>

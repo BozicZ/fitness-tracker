@@ -1,0 +1,77 @@
+.medium-16-solid-grey {
+  font-family: "Helvetica-Neue-Medium";
+  font-size: 16px;
+  color: #898694;
+}
+
+.medium-16-tr-white {
+  font-family: "Helvetica-Neue-Medium";
+  font-size: 16px;
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.medium-16-solid-green {
+  font-family: "Helvetica-Neue-Medium";
+  font-size: 16px;
+  color: #00b6a3;
+}
+
+.regular-18-solid-grey {
+  font-family: "Helvetica-Neue";
+  font-size: 18px;
+  color: #898694;
+}
+
+.medium-20-solid-white {
+  font-family: "Helvetica-Neue-Medium";
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.medium-20-solid-black {
+  font-family: "Helvetica-Neue-Medium";
+  font-size: 20px;
+  color: #000000;
+}
+
+.regular-20-solid-black {
+  font-family: "Helvetica-Neue";
+  font-size: 20px;
+  color: #000000;
+}
+
+.bold-34-solid-green {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 34px;
+  color: #00b6a3;
+}
+
+.bold-34-solid-white {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 34px;
+  color: #ffffff;
+}
+
+.bold-38-solid-white {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 38px;
+  color: #ffffff;
+}
+
+.bold-40-solid-green {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 40px;
+  color: #00b6a3;
+}
+
+.bold-40-solid-black {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 40px;
+  color: #000000;
+}
+
+.bold-48-solid-black {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 48px;
+  color: #000000;
+}

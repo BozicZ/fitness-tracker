@@ -1,139 +1,25 @@
-.ft-days {
-  display: flex;
-  justify-content: space-between;
-  margin: 32px 0px;
-  color: #ffffff;
-}
-
-.ft-day {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-}
-
-.ft-day p {
-  margin: 0px;
-  font-size: 16px;
-}
-
-.ft-header {
-  padding: 27px;
-}
-
-.ft-header h1,
-p {
-  margin: 0px;
-}
-
-.ft-header p {
-  color: #898694;
-}
-
-.ft-header h1 {
-  color: #00b6a3;
-  padding: 3px;
-  margin-bottom: 10px;
-  font-size: 34px;
-}
-
 .ft-info {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  padding: 27px;
-  color: #ffffff;
 }
 
-.ft-info h2,
-h1,
-p {
-  margin: 0px;
+.info-total {
+  margin-left: 25px;
+  flex-grow: 1;
 }
 
-.ft-info h1 {
-  font-size: 38px;
+.info-result {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.ft-info h2 {
-  font-size: 20px;
-}
-.ft-info p {
-  font-size: 16px;
+.ft-header p.title {
+  margin-bottom: 10px;
 }
 
-.mb {
-  margin-bottom: 14px;
-}
-
-.ft-details-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.ft-details-bottom h2 {
-  color: #00b6a3;
-  font-size: 40px;
-  margin: 0px;
-}
-
-.ft-details-bottom p {
-  color: #b3b3b3;
-  font-size: 18px;
-  margin: 0px;
-}
-
-.ft-details-bottom div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.ft-details-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.ft-details-main h1 {
-  font-size: 48px;
-  color: #151c1f;
-  margin: 0px;
-}
-
-.ft-details-main p {
-  font-size: 20px;
-  color: #151c1f;
-  margin: 0px;
-}
-
-.ft-details-main h2 {
-  font-size: 40px;
-  color: #151c1f;
-  margin: 0px;
-}
-
-.ft-details-main div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.ft-circle {
-  height: 231px;
-  width: 231px;
-  border: 10px solid #00b6a3;
-  border-radius: 120px;
-  margin-top: 35px;
-}
-
-.ft-icon {
-  background: #00b6a3;
-  padding: 10px;
-  border-radius: 30px;
-  opacity: 0.3;
+.add-height {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
