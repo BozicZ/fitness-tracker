@@ -64,8 +64,8 @@ class Home extends Component {
       <div>
         <Container background="solid" size="large">
           <div className="ft-header">
-            <p className="title">Welcome!</p>
-            <p className="subtitle">Overview of your activity</p>
+            <p className="bold-40-solid-green title">Welcome!</p>
+            <p className="medium-16-solid-grey">Overview of your activity</p>
           </div>
         </Container>
         {!this.props.sample.steps ? (
@@ -94,8 +94,10 @@ class Home extends Component {
                       onClick={() => this.selectDay(day.dayName)}
                     >
                       <div className="ft-day">
-                        <p className="subtitle">{day.day}</p>
-                        <p className="subtitle">{day.dayName.toUpperCase()}</p>
+                        <p className="medium-16-tr-white">{day.day}</p>
+                        <p className="medium-16-tr-white">
+                          {day.dayName.toUpperCase()}
+                        </p>
                       </div>
                     </Link>
                   </Container>
@@ -109,15 +111,15 @@ class Home extends Component {
                     <div className="ft-info">
                       <img className="ft-icon light" src={icons[index]} />
                       <div className="info-total">
-                        <p className="subtitle">{info.title}</p>
-                        <p>Total</p>
+                        <p className="medium-20-solid-white">{info.title}</p>
+                        <p className="medium-16-tr-white">Total</p>
                       </div>
                       <div
                         className={`info-result ${
                           index === 0 ? "add-height" : ""
                         }`}
                       >
-                        <p className="result ">{info.value}</p>
+                        <p className="bold-38-solid-white ">{info.value}</p>
                       </div>
                     </div>
                   </Container>

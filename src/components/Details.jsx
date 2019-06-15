@@ -34,8 +34,8 @@ export default function Details(props) {
             <img src={ArrowLeft} />
           </Link>
           <div className="ft-details-header">
-            <p className="title">{currDay + "!"}</p>
-            <p className="subtitle">{fullDate}</p>
+            <p className="bold-34-solid-white title">{currDay + "!"}</p>
+            <p className="medium-16-tr-white">{fullDate}</p>
           </div>
         </div>
       </Container>
@@ -50,8 +50,10 @@ export default function Details(props) {
               key={index + "_details"}
             >
               <div className="ft-day">
-                <p className="subtitle">{day.day}</p>
-                <p className="subtitle">{day.dayName.toUpperCase()}</p>
+                <p className="medium-16-tr-white">{day.day}</p>
+                <p className="medium-16-tr-white">
+                  {day.dayName.toUpperCase()}
+                </p>
               </div>
             </Container>
           );
@@ -61,27 +63,27 @@ export default function Details(props) {
         <div className="ft-details-main">
           <div className="ft-circle">
             <img className="ft-icon dark details-icon" src={RunnerIcon} />
-            <p className="details-info">Steps</p>
-            <p className="details-result">{allSteps}</p>
+            <p className="regular-20-solid-black">Steps</p>
+            <p className="bold-48-solid-black">{allSteps}</p>
           </div>
           <div>
-            <p className="info">Very good</p>
-            <p className="message">Keep going!</p>
+            <p className="regular-20-solid-black">Very good</p>
+            <p className="bold-40-solid-black">Keep going!</p>
           </div>
         </div>
 
         <div className="ft-details-bottom">
           <div>
-            <p className="details-title">km</p>
-            <p className="details-total">{distance}</p>
+            <p className="regular-18-solid-grey">km</p>
+            <p className="bold-40-solid-green">{distance}</p>
           </div>
           <div>
-            <p className="details-title">cal</p>
-            <p className="details-total">{calories}</p>
+            <p className="regular-18-solid-grey">cal</p>
+            <p className="bold-40-solid-green">{calories}</p>
           </div>
           <div>
-            <p className="details-title">hours</p>
-            <p className="details-total">{timeSpent}</p>
+            <p className="regular-18-solid-grey">hours</p>
+            <p className="bold-40-solid-green">{timeSpent}</p>
           </div>
         </div>
       </Container>

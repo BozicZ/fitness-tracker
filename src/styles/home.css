@@ -3,7 +3,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  color: #ffffff;
 }
 
 .info-total {
@@ -11,25 +10,12 @@
   flex-grow: 1;
 }
 
-.info-total p {
-  font-size: 16px;
-}
-
-.info-total p.subtitle {
-  font-size: 20px;
-}
-
 .info-result {
   margin-left: auto;
   margin-right: auto;
 }
 
-.ft-header p {
-  color: #898694;
-}
-
 .ft-header p.title {
-  color: #00b6a3;
   margin-bottom: 10px;
 }
 

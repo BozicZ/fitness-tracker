@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import "../styles/app.css";
 import "../styles/home.css";
 import "../styles/details.css";
+import "../styles/fonts.css";
 
 class App extends Component {
   constructor(props) {
