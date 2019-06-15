@@ -66,7 +66,7 @@ export default function Details(props) {
             <p className="regular-20-solid-black">Steps</p>
             <p className="bold-48-solid-black">{allSteps}</p>
           </div>
-          <div>
+          <div className="anim-fade-in">
             <p className="regular-20-solid-black">Very good</p>
             <p className="bold-40-solid-black">Keep going!</p>
           </div>

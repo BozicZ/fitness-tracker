@@ -106,7 +106,7 @@ class Home extends Component {
             </div>
             {this.state.info.map((info, index) => {
               return (
-                <div key={index + "_info"} className="mb">
+                <div key={index + "_info"} className="mb anim-fade-in">
                   <Container background="light" size={"large"}>
                     <div className="ft-info">
                       <img className="ft-icon light" src={icons[index]} />
