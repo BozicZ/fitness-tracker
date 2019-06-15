@@ -7,7 +7,8 @@ import TimerIcon from "../svg/timer.svg";
 import CaloriesIcon from "../svg/whatshot.svg";
 
 import Container from "./Container";
-import "../styles/home.css";
+
+const icons = [TimerIcon, RunnerIcon, CaloriesIcon, RunnerIcon];
 
 class Home extends Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class Home extends Component {
           { title: "Calories", value: totalSteps / 20 },
           {
             title: "Distance",
-            value: ((totalSteps * 0.762) / 1000).toFixed(2) + " km"
+            value: ((totalSteps * 0.762) / 1000).toFixed(2)
           }
         ]
       });
@@ -61,54 +62,70 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Container backgroundColor={"#fff"}>
+        <Container background="solid" size="large">
           <div className="ft-header">
-            <h1>Welcome!</h1>
-            <p>Overview of your activity</p>
+            <p className="title">Welcome!</p>
+            <p className="subtitle">Overview of your activity</p>
           </div>
         </Container>
-        <div className="ft-days">
-          {this.state.days.map((day, index) => {
-            return (
-              <Container
-                key={index + "_days"}
-                backgroundColor={"rgba(255, 255, 255, 0.2)"}
-              >
-                <Link
-                  to={{
-                    pathname: "/details",
-                    state: {
-                      currDay: day.dayName,
-                      allDays: this.props.sample.steps
-                    }
-                  }}
-                  onClick={() => this.selectDay(day.dayName)}
-                >
-                  <div className="ft-day">
-                    <p>{day.day}</p>
-                    <p>{day.dayName.toUpperCase()}</p>
-                  </div>
-                </Link>
-              </Container>
-            );
-          })}
-        </div>
-        {this.state.info.map((info, index) => {
-          return (
-            <div key={index + "_info"} className="mb">
-              <Container backgroundColor={"rgba(255, 255, 255, 0.2)"}>
-                <div className="ft-info">
-                  <img className="ft-icon" src={RunnerIcon} />
-                  <div>
-                    <h2>{info.title}</h2>
-                    <p>Total</p>
-                  </div>
-                  <h1>{info.value}</h1>
-                </div>
-              </Container>
+        {!this.props.sample.steps ? (
+          <div className="loading">
+            <p>Loading...</p>
+          </div>
+        ) : (
+          <div>
+            <div className="ft-days">
+              {this.state.days.map((day, index) => {
+                return (
+                  <Container
+                    background="light"
+                    size={"small"}
+                    screen={"home"}
+                    key={index + "_days"}
+                  >
+                    <Link
+                      to={{
+                        pathname: "/details",
+                        state: {
+                          currDay: day.dayName,
+                          allDays: this.props.sample.steps
+                        }
+                      }}
+                      onClick={() => this.selectDay(day.dayName)}
+                    >
+                      <div className="ft-day">
+                        <p className="subtitle">{day.day}</p>
+                        <p className="subtitle">{day.dayName.toUpperCase()}</p>
+                      </div>
+                    </Link>
+                  </Container>
+                );
+              })}
             </div>
-          );
-        })}
+            {this.state.info.map((info, index) => {
+              return (
+                <div key={index + "_info"} className="mb">
+                  <Container background="light" size={"large"}>
+                    <div className="ft-info">
+                      <img className="ft-icon light" src={icons[index]} />
+                      <div className="info-total">
+                        <p className="subtitle">{info.title}</p>
+                        <p>Total</p>
+                      </div>
+                      <div
+                        className={`info-result ${
+                          index === 0 ? "add-height" : ""
+                        }`}
+                      >
+                        <p className="result ">{info.value}</p>
+                      </div>
+                    </div>
+                  </Container>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   }

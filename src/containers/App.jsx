@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../styles/app.css";
+import "../styles/home.css";
+import "../styles/details.css";
 
 class App extends Component {
   constructor(props) {

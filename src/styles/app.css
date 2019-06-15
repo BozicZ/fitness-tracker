@@ -18,3 +18,113 @@
   font-family: "Helvetica-Neue-Medium";
   src: url("../fonts/HelveticaNeueMedium.ttf");
 }
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.light {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.solid {
+  background-color: #fff;
+}
+
+.dark {
+  background-color: rgba(0, 182, 163, 0.3);
+}
+
+.mb {
+  margin-bottom: 14px;
+}
+
+.ft-icon {
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.loading {
+  color: #fff;
+  font-size: 34px;
+  font-family: "Helvetica-Neue-Medium";
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.ft-days {
+  display: flex;
+  justify-content: space-between;
+  margin: 32px 0px;
+}
+
+.ft-days a {
+  text-decoration: none;
+  color: white;
+}
+
+.ft-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.ft-day p {
+  font-family: "Helvetica-Neue-Medium";
+  font-size: 16px;
+}
+
+p.title {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 34px;
+}
+
+p.subtitle {
+  font-family: "Helvetica-Neue-Medium";
+  font-size: 16px;
+  color: rgb(255, 255, 255, 0.7);
+}
+
+p.result {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 38px;
+}
+
+p.message {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 40px;
+}
+
+p.details-result {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 48px;
+}
+
+p.info {
+  font-family: "Helvetica-Neue-Medium";
+  font-size: 20px;
+}
+
+p.details-info {
+  font-family: "Helvetica-Neue-Medium";
+  font-size: 20px;
+}
+
+p.details-title {
+  font-family: "Helvetica-Neue-Medium";
+  font-size: 18px;
+  color: #898694;
+}
+
+p.details-total {
+  font-family: "Helvetica-Neue-Bold";
+  font-size: 40px;
+  color: #00b6a3;
+}

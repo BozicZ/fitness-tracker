@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Container from "./Container";
 import RunnerIcon from "../svg/run.svg";
-
-import "../styles/home.css";
+import ArrowLeft from "../svg/left.svg";
 
 // TODO: Move to helpers all repeating functions
 const calcTime = (currDay, allDays) => {
@@ -24,21 +23,19 @@ export default function Details(props) {
     selectedDay.year
   }.`;
   const allSteps = selectedDay.steps;
-  const calories = selectedDay.steps / 20;
+  const calories = (selectedDay.steps / 20).toFixed(1);
   const timeSpent = calcTime(currDay, allDays);
-  const distance = ((selectedDay.steps * 0.762) / 1000).toFixed(2);
+  const distance = ((selectedDay.steps * 0.762) / 1000).toFixed(1);
   return (
     <div>
-      <ul>
-        <li>
-          <Link to="/home">Home</Link>
-        </li>
-      </ul>
-      <Container backgroundColor={"rgba(255, 255, 255, 0.2)"}>
-        <div className="ft-info">
-          <div>
-            <h1>{currDay + "!"}</h1>
-            <p>{fullDate}</p>
+      <Container background="light" size="large" screen="details">
+        <div className="details-header">
+          <Link to="/home">
+            <img src={ArrowLeft} />
+          </Link>
+          <div className="ft-details-header">
+            <p className="title">{currDay + "!"}</p>
+            <p className="subtitle">{fullDate}</p>
           </div>
         </div>
       </Container>
@@ -46,42 +43,45 @@ export default function Details(props) {
         {allDays.map((day, index) => {
           return (
             <Container
+              background="light"
+              size={"small"}
+              screen={"details"}
+              active={day.dayName === currDay ? "active" : ""}
               key={index + "_details"}
-              backgroundColor={"rgba(255, 255, 255, 0.2)"}
             >
               <div className="ft-day">
-                <p>{day.day}</p>
-                <p>{day.dayName}</p>
+                <p className="subtitle">{day.day}</p>
+                <p className="subtitle">{day.dayName.toUpperCase()}</p>
               </div>
             </Container>
           );
         })}
       </div>
-      <Container backgroundColor={"#fff"}>
+      <Container background="solid" size="large" screen="details">
         <div className="ft-details-main">
           <div className="ft-circle">
-            <img className="ft-icon" src={RunnerIcon} />
-            <p>Steps</p>
-            <h1>{allSteps}</h1>
+            <img className="ft-icon dark details-icon" src={RunnerIcon} />
+            <p className="details-info">Steps</p>
+            <p className="details-result">{allSteps}</p>
           </div>
           <div>
-            <p>Very good</p>
-            <h2>Keep going!</h2>
+            <p className="info">Very good</p>
+            <p className="message">Keep going!</p>
           </div>
         </div>
 
         <div className="ft-details-bottom">
           <div>
-            <p>km</p>
-            <h2>{distance}</h2>
+            <p className="details-title">km</p>
+            <p className="details-total">{distance}</p>
           </div>
           <div>
-            <p>cal</p>
-            <h2>{calories}</h2>
+            <p className="details-title">cal</p>
+            <p className="details-total">{calories}</p>
           </div>
           <div>
-            <p>hours</p>
-            <h2>{timeSpent}</h2>
+            <p className="details-title">hours</p>
+            <p className="details-total">{timeSpent}</p>
           </div>
         </div>
       </Container>
