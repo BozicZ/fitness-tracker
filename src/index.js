@@ -8,10 +8,10 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import "./styles/index.css";
 import myRootReducer from "./reducers";
-import App from "./containers/App";
+import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
-import Home from "./components/Home";
+import Home from "./containers/Home";
 import Details from "./components/Details";
 
 const store = createStore(myRootReducer, applyMiddleware(thunk, logger));

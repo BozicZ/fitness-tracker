@@ -6,7 +6,7 @@ import RunnerIcon from "../svg/run.svg";
 import TimerIcon from "../svg/timer.svg";
 import CaloriesIcon from "../svg/whatshot.svg";
 
-import Container from "./Container";
+import Container from "../components/Container";
 
 const icons = [TimerIcon, RunnerIcon, CaloriesIcon, RunnerIcon];
 
