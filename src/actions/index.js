@@ -1,12 +1,17 @@
 import axios from "axios";
+import {
+  ADD_STEPS_STARTED,
+  ADD_STEPS_COMPLETED,
+  ADD_SELECTED_DAY
+} from "../constants/actionsConstants";
 
 const addStepsStarted = () => ({
-  type: "ADD_STEPS_STARTED",
+  type: ADD_STEPS_STARTED,
   payload: { loading: true }
 });
 
 const addStepsCompleted = payload => ({
-  type: "ADD_STEPS_COMPLETED",
+  type: ADD_STEPS_COMPLETED,
   payload
 });
 
@@ -63,6 +68,6 @@ export const addSteps = () => {
 };
 
 export const addSelectedDay = payload => ({
-  type: "ADD_SELECTED_DAY",
+  type: ADD_SELECTED_DAY,
   payload
 });
