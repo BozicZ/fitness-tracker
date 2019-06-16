@@ -34,7 +34,7 @@ export const addSteps = () => {
         "December"
       ];
 
-      const dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+      const dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
       const days = res.data.map(item => {
         return {

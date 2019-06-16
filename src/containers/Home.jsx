@@ -96,7 +96,7 @@ class Home extends Component {
                       <div className="ft-day">
                         <p className="medium-16-tr-white">{day.day}</p>
                         <p className="medium-16-tr-white">
-                          {day.dayName.toUpperCase()}
+                          {day.dayName.slice(0, 3).toUpperCase()}
                         </p>
                       </div>
                     </Link>
@@ -119,7 +119,11 @@ class Home extends Component {
                           index === 0 ? "add-height" : ""
                         }`}
                       >
-                        <p className="bold-38-solid-white ">{info.value}</p>
+                        <p className="bold-38-solid-white ">
+                          {index === 0 && info.value[0] < 1
+                            ? info.value.substr(1)
+                            : info.value}
+                        </p>
                       </div>
                     </div>
                   </Container>
