@@ -52,7 +52,7 @@ export default function Details(props) {
               <div className="ft-day">
                 <p className="medium-16-tr-white">{day.day}</p>
                 <p className="medium-16-tr-white">
-                  {day.dayName.toUpperCase()}
+                  {day.dayName.slice(0, 3).toUpperCase()}
                 </p>
               </div>
             </Container>
