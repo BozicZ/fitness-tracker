@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import { addSteps, addSelectedDay } from "../actions";
 import RunnerIcon from "../svg/run.svg";
 import TimerIcon from "../svg/timer.svg";
@@ -136,6 +137,11 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  sample: PropTypes.shape({}).isRequired
+};
+
 const mapStateToProps = ({ sample }) => {
   return { sample };
 };
