@@ -1,6 +1,7 @@
 import {
   ADD_STEPS_STARTED,
   ADD_STEPS_COMPLETED,
+  ADD_STEPS_FAILED,
   ADD_SELECTED_DAY
 } from "../constants/actionsConstants";
 
@@ -10,6 +11,8 @@ const sampleReducer = (state = {}, action) => {
       return { ...state, loading: true };
     case ADD_STEPS_COMPLETED:
       return { ...state, steps: action.payload, loading: false };
+    case ADD_STEPS_FAILED:
+      return { ...state, errorMsg: action.payload, loading: false };
     case ADD_SELECTED_DAY:
       return { ...state, selecdetDay: action.payload };
     default:

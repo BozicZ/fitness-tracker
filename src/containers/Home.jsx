@@ -66,7 +66,12 @@ class Home extends Component {
             <p className="medium-16-solid-grey">Overview of your activity</p>
           </div>
         </Container>
-        {!this.props.sample.steps ? (
+        {this.props.sample.errorMsg ? (
+          <div className="loading">
+            <p>{this.props.sample.errorMsg}</p>
+          </div>
+        ) : null}
+        {!this.props.sample.steps && !this.props.sample.errorMsg ? (
           <div className="loading">
             <p>Loading...</p>
           </div>
