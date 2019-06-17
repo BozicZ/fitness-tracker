@@ -34,7 +34,7 @@ export default function Details(props) {
       <Container background="light" size="large" screen="details">
         <div className="details-header">
           <Link to="/home">
-            <img src={ArrowLeft} />
+            <img src={ArrowLeft} alt="Arrow icon" />
           </Link>
           <div className="ft-details-header">
             <p className="bold-34-solid-white title">{currDay + "!"}</p>
@@ -65,7 +65,11 @@ export default function Details(props) {
       <Container background="solid" size="large" screen="details">
         <div className="ft-details-main">
           <div className="ft-circle">
-            <img className="ft-icon dark details-icon" src={RunnerIcon} />
+            <img
+              className="ft-icon dark details-icon"
+              src={RunnerIcon}
+              alt="Runner icon"
+            />
             <p className="regular-20-solid-black">Steps</p>
             <p className="bold-48-solid-black">{allSteps}</p>
           </div>
