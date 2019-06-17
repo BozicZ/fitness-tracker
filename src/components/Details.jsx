@@ -3,16 +3,18 @@ import { Link } from "react-router-dom";
 import Container from "./Container";
 import RunnerIcon from "../svg/run.svg";
 import ArrowLeft from "../svg/left.svg";
+import {
+  formatTimeString,
+  calcCalories,
+  calcDistance,
+  roundToHour
+} from "../utils/tools";
 
-// TODO: Move to helpers all repeating functions
 const calcTime = (currDay, allDays) => {
   const totalSteps = allDays.find(day => day.dayName === currDay).steps;
   let totalTime = new Date(null);
   totalTime.setSeconds(totalSteps * 0.5);
-  totalTime = totalTime
-    .toISOString()
-    .substr(11, 5)
-    .replace(":", " ");
+  totalTime = formatTimeString(totalTime).replace(":", " ");
   return totalTime;
 };
 
@@ -23,9 +25,10 @@ export default function Details(props) {
     selectedDay.year
   }.`;
   const allSteps = selectedDay.steps;
-  const calories = (selectedDay.steps / 20).toFixed(1);
+  const calories = calcCalories(selectedDay.steps).toFixed(1);
   const timeSpent = calcTime(currDay, allDays);
-  const distance = ((selectedDay.steps * 0.762) / 1000).toFixed(1);
+  const distance = calcDistance(selectedDay.steps).toFixed(1);
+
   return (
     <div>
       <Container background="light" size="large" screen="details">
@@ -83,7 +86,7 @@ export default function Details(props) {
           </div>
           <div>
             <p className="regular-18-solid-grey">hours</p>
-            <p className="bold-40-solid-green">{timeSpent}</p>
+            <p className="bold-40-solid-green">{roundToHour(timeSpent)}</p>
           </div>
         </div>
       </Container>
