@@ -3,16 +3,15 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import logger from "redux-logger";
-
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import "./styles/index.css";
 import myRootReducer from "./reducers";
-import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
+import App from "./components/App";
 import Home from "./containers/Home";
 import Details from "./components/Details";
+import "./styles/index.css";
 
 const store = createStore(myRootReducer, applyMiddleware(thunk, logger));
 

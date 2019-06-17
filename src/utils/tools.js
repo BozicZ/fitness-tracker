@@ -9,7 +9,7 @@ export const calcDistance = steps => (steps * 0.762) / 1000;
 export const roundToHour = time => {
   const hour = time[0] === "0" ? time[1] : time.slice(0, 2);
   let remainder = time.substr(3, 2);
-  remainder = remainder[0] == "0" ? remainder[1] : remainder;
+  remainder = remainder[0] === "0" ? remainder[1] : remainder;
   const timeValue = `${hour}.${(remainder / 60)
     .toFixed(2)
     .toString()

@@ -29,7 +29,7 @@ class Home extends Component {
     dispatch(addSteps());
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(prevProps) {
     if (prevProps.sample.steps !== this.props.sample.steps) {
       const totalSteps = this.props.sample.steps.reduce((acc, curr) => {
         return acc + curr.steps;
@@ -107,7 +107,11 @@ class Home extends Component {
                 <div key={index + "_info"} className="mb anim-fade-in">
                   <Container background="light" size={"large"}>
                     <div className="ft-info">
-                      <img className="ft-icon light" src={icons[index]} />
+                      <img
+                        className="ft-icon light"
+                        src={icons[index]}
+                        alt={info.title}
+                      />
                       <div className="info-total">
                         <p className="medium-20-solid-white">{info.title}</p>
                         <p className="medium-16-tr-white">Total</p>
