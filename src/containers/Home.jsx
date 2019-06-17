@@ -6,6 +6,7 @@ import { addSteps, addSelectedDay } from "../actions";
 import RunnerIcon from "../svg/run.svg";
 import TimerIcon from "../svg/timer.svg";
 import CaloriesIcon from "../svg/whatshot.svg";
+import { formatTimeString, calcCalories, calcDistance } from "../utils/tools";
 
 import Container from "../components/Container";
 
@@ -35,20 +36,16 @@ class Home extends Component {
       }, 0);
       let totalTime = new Date(null);
       totalTime.setSeconds(totalSteps * 0.5);
-      totalTime =
-        totalTime
-          .toISOString()
-          .substr(11, 5)
-          .replace(":", "h ") + "min";
+      totalTime = formatTimeString(totalTime).replace(":", "h ") + "min";
       this.setState({
         days: this.props.sample.steps,
         info: [
           { title: "Activity", value: totalTime },
           { title: "Steps", value: totalSteps },
-          { title: "Calories", value: totalSteps / 20 },
+          { title: "Calories", value: calcCalories(totalSteps) },
           {
             title: "Distance",
-            value: ((totalSteps * 0.762) / 1000).toFixed(2)
+            value: calcDistance(totalSteps).toFixed(2)
           }
         ]
       });
